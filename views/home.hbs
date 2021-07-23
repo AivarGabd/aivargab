@@ -1,36 +1,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="/home/css/style.css">
-    
-    <main>
-		<header>
-			<button id="ideaparallels-tab-button" class="tab-button" onclick="tab_button_click(this)">ideaparallels</button> 
-			<button id="art-lebedev-patnaski-tab-button" class="tab-button" onclick="tab_button_click(this)">art-lebedev-patnaski</button>
-		</header>
-	
-		<article id="ideaparallels" class="ideaparallels-container">
-			<div>
-				<a href="https://www.ideaparallels.ru/">ideaparallels</a> - 
-				платформа для навигации в знаниях и опыте других людей
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus viverra vitae congue eu consequat ac felis donec. Vulputate sapien nec sagittis aliquam malesuada bibendum. Euismod in pellentesque massa placerat duis ultricies lacus. Vitae turpis massa sed elementum tempus egestas sed sed. At quis risus sed vulputate odio ut enim blandit. Egestas erat imperdiet sed euismod nisi. Eget felis eget nunc lobortis mattis. In cursus turpis massa tincidunt dui ut. Lectus arcu bibendum at varius vel. Viverra justo nec ultrices dui sapien eget mi proin sed. Sed risus pretium quam vulputate dignissim suspendisse in. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Viverra accumsan in nisl nisi. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Gravida dictum fusce ut placerat orci nulla. Odio eu feugiat pretium nibh ipsum.
-                Justo eget magna fermentum iaculis eu. Elementum eu facilisis sed odio morbi. Sagittis orci a scelerisque purus semper eget duis at tellus. Nunc scelerisque viverra mauris in aliquam. Fermentum posuere urna nec tincidunt. Netus et malesuada fames ac turpis egestas sed. Aliquet nec ullamcorper sit amet risus nullam eget. Cras fermentum odio eu feugiat pretium. Vestibulum sed arcu non odio euismod lacinia at quis risus. Volutpat est velit egestas dui id ornare arcu odio. Feugiat nibh sed pulvinar proin. Mi bibendum neque egestas congue quisque egestas diam. Id neque aliquam vestibulum morbi blandit cursus risus. Nibh praesent tristique magna sit amet. Hac habitasse platea dictumst quisque. Ultrices tincidunt arcu non sodales neque. Cursus in hac habitasse platea dictumst quisque. Ipsum dolor sit amet consectetur adipiscing. Venenatis a condimentum vitae sapien.
-                Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Donec enim diam vulputate ut pharetra sit amet. Cursus sit amet dictum sit amet. Arcu cursus euismod quis viverra nibh cras. Et egestas quis ipsum suspendisse ultrices gravida dictum. Senectus et netus et malesuada fames. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Sapien pellentesque habitant morbi tristique senectus. Iaculis eu non diam phasellus vestibulum lorem.
-                Consectetur adipiscing elit ut aliquam purus. Felis eget nunc lobortis mattis aliquam. Dolor sit amet consectetur adipiscing elit. Mauris rhoncus aenean vel elit scelerisque. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Fusce id velit ut tortor pretium viverra suspendisse. Tellus molestie nunc non blandit massa. Magna fringilla urna porttitor rhoncus dolor. Urna neque viverra justo nec. Libero volutpat sed cras ornare arcu dui vivamus arcu. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Proin sed libero enim sed faucibus turpis in eu. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Neque convallis a cras semper auctor neque vitae tempus quam. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Urna duis convallis convallis tellus id. Varius sit amet mattis vulputate enim nulla aliquet porttitor. Euismod elementum nisi quis eleifend quam. Pellentesque adipiscing commodo elit at imperdiet.
-                Egestas maecenas pharetra convallis posuere morbi leo. Dui nunc mattis enim ut tellus elementum sagittis. Posuere ac ut consequat semper. Elementum pulvinar etiam non quam lacus suspendisse. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Commodo ullamcorper a lacus vestibulum sed arcu non. Tortor id aliquet lectus proin nibh nisl condimentum id. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Leo in vitae turpis massa sed. Praesent tristique magna sit amet purus gravida. Scelerisque in dictum non consectetur a erat nam at lectus. Nec ullamcorper sit amet risus nullam eget felis. Diam in arcu cursus euismod. Auctor neque vitae tempus quam pellentesque nec nam. Ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Commodo ullamcorper a lacus vestibulum. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus.
-			</div>
-			<div>
-				Backend:
-			</div>
-			<div>
-				Frontend:
-			</div>
-		</article>
+<link rel="stylesheet" href="/home/css/fonts/stylesheet.css">
 
-		<article id="art-lebedev-patnaski">
-			art-lebedev-patnaski
-		</article>
-	</main>
+<main id="ideaparallels">
+  
+</main>
 
+</body>
 
+<script>
+  var swiper = new Swiper(".mySwiper", {});
+</script>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js'></script>
-  <script  src="/home/js/script.js"></script>
+<script>
+  let colors_array = {{{colors_array}}}
+  let offset = 0, timeout_milisec = 2000
+  document.getElementById('ideaparallels').style.transition = 'all ' + timeout_milisec/1000 + 's'
+  document.getElementById('ideaparallels').style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+
+  for (let i = 0; i < 200; i++) {
+    setTimeout(function () {
+      document.getElementById('ideaparallels').style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+    }, timeout_milisec + offset)
+    offset += timeout_milisec
+  }
+
+</script>
+

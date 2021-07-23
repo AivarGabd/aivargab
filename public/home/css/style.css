@@ -1,69 +1,29 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 ::-webkit-scrollbar {
-    width: 0px;
-  }
-  
-  body{
-    margin:0 15% 0 15%; 
-  }
-  
-  header{
-    background-color: white;
-    position: fixed;
-    width: 70%;
-    text-align: center;
-    font-size: 200%;
-    padding: 20px;
-    z-index: 1;
-  }
-  .tab-button{
-    font-family: 'Helvetica', 'Arial', sans-serif;  
-    font-size: 60%;
-    border: 0;
-    background-color: transparent;
-    padding: 20px;
-    color: hsl(0, 0%, 25%);
-  }
-  
-  .active_tab_button{
-    border-width: 0 0 1px;
-    border-style: solid;
-  }
-  
-  .past_active_tab_button{
-    border-width: 0 0 0px;
-    border-style: solid;
-  }
-  
-  
-  main {
-    -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
-    position: relative;
-    max-height: 100vh;
-    overflow-y: auto;
-    color: black;
-  }
-  
-  
-  article {
-    height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-  }
+  width: 0px;
+}
 
-  .ideaparallels-container{
-    background-color: whitesmoke;
-    font-family: 'Montserrat', sans-serif; 
-  }
-  
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  text-align: center;
+}
 
-  
-  article:nth-of-type(2) {
-    background-color: white;
-  }
-  
+main {
+  width: 100vw;
+  height: 100vw;
+  margin: 0 auto;
+}
+
+.ideaparallels a {
+  color: #6c6cff;
+  text-decoration: none;
+  border-bottom: 2px solid #6c6cff;
+  font-size: 200%;
+}
+
+.art-lebedev-patnaski {
+  font-family: "Gotham Pro";
+  background-color: gray;
+}

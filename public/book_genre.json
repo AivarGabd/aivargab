@@ -1,0 +1,88 @@
+[
+  {
+     
+      "name_ru":"Информационное",
+      "name_engl":"Information",
+      "list":[
+        {
+            "genre": "Саморазвитие",
+            "genre_engl": "Self-improvement",
+            "color": "#eb8e86"
+        },
+        {
+            "genre": "Психология",
+            "genre_engl": "Psychology",
+            "color": "#008080"
+        },
+        {
+            "genre": "Научно-популярная литература",
+            "genre_engl": "Essay",
+            "color": "#AC96BC"
+        },
+        {
+            "genre": "Биология",
+            "genre_engl": "Biology",
+            "color": "#5eb270"
+
+        },
+        {
+            "genre": "История",
+            "genre_engl": "History",
+            "color": "#dbc374"
+        },
+        {
+            "genre": "Бизнес",
+            "genre_engl": "Business",
+            "color": "#2c7fea"
+        },
+        {
+            "genre": "Наблюдение",
+            "genre_engl": "Observation",
+            "color": "#816890"
+        },
+        {
+            "genre": "Биография и мемуары",
+            "genre_engl": "Biography",
+            "color": "#BEBEB7"
+        },
+        {
+            "genre": "Философия",
+            "genre_engl": "Philosophy",
+            "color": "#c27933"
+        },
+        {
+            "genre": "Публицистика",
+            "genre_engl": "Journalism",
+            "color": "#BC8F8F"
+        },
+        {
+            "genre": "Экономика",
+            "genre_engl": "Economy",
+            "color": "#8a958d"
+        }
+      ]
+  },
+  {
+      
+      "name_ru":"Художественное",
+      "name_engl":"Fiction",
+      "list":[
+        {
+            "genre": "Антиутопия",
+            "genre_engl": "Dystopia",
+            "color": "#ffba00"
+        },
+        {
+            "genre": "Любовный роман",
+            "genre_engl": "Novels",
+            "color": "#ecb2c5"
+        },
+        {
+            "genre": "Научная фантастика",
+            "genre_engl": "Science_fiction",
+            "color": "#b534b5"
+        } 
+    ]
+  }
+    
+]
