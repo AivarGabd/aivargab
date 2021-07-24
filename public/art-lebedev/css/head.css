@@ -1,0 +1,78 @@
+
+* {
+    color: black;
+  }
+  
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+    font-family: "Gotham Pro";
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+
+
+  .body,html::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .header {
+    width: 100%;
+    background-color: transparent;
+    height: 100px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .a_head_href:hover {
+    color: #fc3c17;
+    cursor: pointer;
+  }
+  .active_href {
+    font-weight: 500;
+    pointer-events: none;
+  }
+
+  .head {
+    margin-top: 20px auto;
+    text-align: center;
+    position: relative;
+  }
+  .head_main_block {
+    font-size: 250%;
+  }
+  .head_href_block {
+    margin-top: 5px;
+    font-size: 110%;
+  }
+  .head_svg {
+    width: 18px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    
+  }
+  .head_href {
+    margin: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .head_query {
+    font-size: 90%;
+    margin: 20px auto;
+    text-decoration: underline;
+    text-decoration-color: #fc3c17;
+  }
+  @media (min-width: 56.25em) {
+    .head_query {
+      width: 400px;
+    }
+  }
+

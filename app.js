@@ -28,7 +28,6 @@ app.set('trust proxy', 1)
 
 
 app.get("/", async (req, res) => {
-
     fs.readFile('public/home/content/book_genre.json', (err, data) => {
         if (err) throw err
         let books_colors = []
@@ -47,11 +46,11 @@ app.get("/i-love-ny", async (req, res) => {
     res.render('i-love-ny')
 })
 
-app.get("/process", async (req, res) => {
-    res.render('process')
+app.get("/i-love-ny-process", async (req, res) => {
+    res.render('i-love-ny-process')
 })
-app.get("/life", async (req, res) => {
-    res.render('life')
+app.get("/i-love-ny-life", async (req, res) => {
+    res.render('i-love-ny-life')
 })
 
 

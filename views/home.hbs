@@ -1,29 +1,120 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="/home/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+<link rel="stylesheet" href="/home/css/main-elements.css">
+<link rel="stylesheet" href="/home/css/main-card.css">
+<link rel="stylesheet" href="/home/css/cards.css">
+<link rel="stylesheet" href="/home/css/background.css">
 <link rel="stylesheet" href="/home/css/fonts/stylesheet.css">
 
-<main id="ideaparallels">
-  
-</main>
 
+  <header>
+    <div class="js-circle wrapper" id="circle">
+      <div class="main_card">
+          <div class="tab">
+              <button id="ideaparallels-tab-button" onclick="tab_button_click(this)">ideaparallels</button>
+              <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">art-lebedev-patnashki</button>
+          </div>
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" id="ideaparallels">
+                    ideaparallels
+                </div>
+                <div class="swiper-slide" id="art-lebedev-patnashki">
+                    <a href="/i-love-ny">art-lebedev-patnashki</a>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <ul id="cards">
+
+      <li class="card" id="card_1">
+        <div class="card__content">
+          <div>
+            <h2>Backend</h2>
+            <div id="card1_content">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="card" id="card_2">
+        <div class="card__content">
+          <div>
+            <h2>Frontend</h2>
+            <div id="card2_content">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="card" id="card_3">
+        <div class="card__content">
+          <div>
+            <h2>UX</h2>
+            <div id="card3_content">
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="card" id="card_4">
+        <div class="card__content">
+          <div id="card4_content">
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+
+      <script src="background.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".swiper-container", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        })
+
+        function tab_button_click(element){           
+          let sliders_array = document.getElementsByClassName('swiper-slide')
+          for (let i=0;i<sliders_array.length;i++){
+            if(sliders_array[i].id == element.id.replace('-tab-button', '')){
+              swiper.slideTo(i, 500, true)
+            }
+          }
+        }
+ 
+        document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
+        fill_website_cards(swiper.slides[swiper.activeIndex].id)
+        swiper.on('slideChange', ()=> {
+          document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
+          fill_website_cards(swiper.slides[swiper.activeIndex].id)
+          swiper.slides.filter((x)=>{ return x !== swiper.slides[swiper.activeIndex]}).forEach(slider => {
+            document.getElementById(slider.id+"-tab-button").classList.remove("active_tab_button")
+          })
+        })
+        
+
+        function fill_website_cards(id){
+          console.log(id)
+        }
+      </script>
 </body>
 
+</body>
 <script>
-  var swiper = new Swiper(".mySwiper", {});
-</script>
 
-<script>
-  let colors_array = {{{colors_array}}}
-  let offset = 0, timeout_milisec = 2000
-  document.getElementById('ideaparallels').style.transition = 'all ' + timeout_milisec/1000 + 's'
-  document.getElementById('ideaparallels').style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
-
-  for (let i = 0; i < 200; i++) {
-    setTimeout(function () {
-      document.getElementById('ideaparallels').style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
-    }, timeout_milisec + offset)
-    offset += timeout_milisec
-  }
 
 </script>
 

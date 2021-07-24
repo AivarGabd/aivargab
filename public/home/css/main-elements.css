@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --swiper-theme-color: black !important;
+  --swiper-navigation-size: 30px !important;
+  --card-height: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 2em;
+  --numcards: 4;
+  --outline-width: 0px;
+}
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 80vw;
+  margin: 0 auto;
+  height: 80vh;
+  place-items: center;
+}
+
+main {
+  width: 80vw;
+  margin: 0 auto;
+  place-items: center;
+}

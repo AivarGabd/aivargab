@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="/art-lebedev/css/main-elements.css">
+<link rel="stylesheet" href="/art-lebedev/css/parallax-elements.css">
+
+<div asscroll-container>
+    <div asscroll>
+        <div class="peaches">
+
+            <div class="peach" data-speed="0.3">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.37">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.35">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.4">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.2">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.3">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.4">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.4">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.3">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.4">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.2">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+            <div class="peach" data-speed="0.1">
+                <svg viewBox="0 0 50 46" width="50" height="46">
+                    <use xlink:href="#heart"/>
+                </svg>
+            </div>
+
+
+        </div>
+
+        <div class="container" data-speed="0.2">
+            
+            <div class="container_content">
+                
+                {{> head}}  
+                <div class="container_text_block">
+                    Пятнашки в любом положении признаются в любви к городу Нью-Йорку. Собирать их при этом все равно сложно.
+                </div>
+                <img src="/art-lebedev/content/home_content/Patnichki.jpg" class="container_img">
+                <div>*Как ни крути</div>
+            
+                
+                 <div class="container_text_block">
+                    Задняя часть снабжена магнитом для красивого хранения на холодильнике.
+                </div>
+                <img src="/art-lebedev/content/home_content/i-love-ny-frige.jpg" class="container_img">
+            </div>
+
+            <div class="footer">
+        
+                <section class="left">
+                    <div class="art_container">
+                        <div class="art_name">арт-директор</div>
+                        <a>Артемий Лебедев</a>
+                    </div>
+                    <div class="art_container">
+                        <div class="art_name">дизайнер</div>
+                        <a>Рома Воронежский</a>
+                    </div>
+                    <div class="art_container">
+                        <div class="art_name">верстальщики</div>
+                        <a>Анна Головина</a><br>
+                        <a>Никита Никитин</a>
+                    </div>
+                </section>
+
+                <aside class="right">
+                    <div class="art_container">
+                        <div class="art_name">менеджеры</div>
+                        <a>Алексей Стрельников</a><br>
+                        <a>Анастасия Прищепа</a>
+                    </div>
+                    
+                    <div class="more_info">
+                        Логотип «Я люблю Нью-Йорк» используется на основании официальной лицензии № ILNY-1221<br><br>
+                        Дата выпуска: 12.08.2011
+                    </div>
+                </aside>
+
+                <aside class="middle">
+                    <div class="purchase_block">
+                        <div class="purchase_block_head">В наших магазинах</div>
+                        <img src="/art-lebedev/content//home_content/Patnichki.jpg" class="footer_img">
+                        <div class="purchase_block_info">
+                            <a href="#">Пятнашки «Я люблю Нью-Йорк»</a>
+                            <div>Цена в онлайне: 99<span class="currency rub">₽</span> ≈ <span id="$_price"></span> ≈ <span id="€_price"></span></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
+
+    <script>
+        window.onload = ()=>{ 
+            setTimeout(()=>{ document.getElementsByClassName('peaches')[0].style.opacity = 1 }, 500);
+        }
+    </script>
+
+    <script type="module" src="art-lebedev/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        fetch("https://api.exchangerate-api.com/v4/latest/RUB")
+                .then(res => res.json())
+                .then(res => {
+                    document.getElementById("$_price").innerHTML = (res.rates.USD * 99).toFixed(1)+"$"
+                    document.getElementById("€_price").innerHTML = (res.rates.EUR * 99).toFixed(1)+"€"
+            })
+    </script>
+
+</body>

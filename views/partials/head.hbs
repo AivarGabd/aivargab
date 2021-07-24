@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="/fonts/stylesheet.css">
+<link rel="stylesheet" href="/art-lebedev/css/head.css">
+
+<div class="header"></div>
+<div class="head">
+  <div class="head_main_block">Пятнашки «Я люблю Нью-Йорк»</div>
+  <div class="head_href_block">
+
+    <div class="head_href">
+      <div id="i-love-nysvg"></div>
+      <a href="/i-love-ny" class="a_head_href" id="i-love-ny">Описание</a>
+    </div>
+
+    <div class="head_href">
+      <div id="i-love-ny-processsvg"></div>
+      <a href="/i-love-ny-process" class="a_head_href" id="i-love-ny-process">Процесс</a>
+    </div>
+
+    <div class="head_href">
+      <div id="i-love-ny-lifesvg"></div>
+      <a href="/i-love-ny-life" class="a_head_href" id="i-love-ny-life">В жизни</a>
+    </div>
+
+    <div class="head_query">
+      <span style="font-style: italic;">Задача.</span>
+      Выпустить сувенир к открытию офиса студии в Нью-Йорке.
+    </div>
+  </div>
+</div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'></script>
+  
+  <script>
+      
+        let active_head_href = window.location.pathname.split('/')[1]
+        document.getElementById(active_head_href).classList.add('active_href')
+        var svg = d3.select("#"+active_head_href+"svg")
+                    .append("svg")
+                    .attr("class", "head_svg")
+                    .attr("viewBox", "0 0 50 46")
+
+        svg.append("path")
+                .attr("d", "M 11.648438 0.644531 C 6.039062 1.609375 2.105469 5.492188 0.53125 11.691406 C -0.0429688 13.882812 0 17.980469 0.617188 20.273438 C 1.847656 24.929688 5.464844 30.445312 10.4375 35.292969  C 13.777344 38.554688 16.113281 40.25 22.003906 43.617188 L 25.191406 45.464844 L 26.574219 44.691406 C 33.332031 40.914062 37.796875 37.417969 42.242188 32.417969 C 46.003906 28.171875 48.425781 24.007812 49.363281 20.253906 C 49.914062 17.9375 50.019531 13.472656 49.554688 11.585938 C 49.128906 9.871094 47.578125 6.738281 46.449219 5.320312 C 43.113281 1.117188 35.714844 -0.644531 31.144531 1.652344 C 29.570312 2.46875 27.507812 3.992188 25.894531 5.535156 L 24.449219 6.929688 L 24 6.308594 C 23.746094 5.964844 22.746094 4.914062 21.789062 3.96875 C 18.730469 0.945312 15.730469 -0.0429688 11.648438 0.644531 Z M 11.648438 0.644531")
+                .attr("fill", "#fc3c17")
+ </script>
+
+
+ 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="heart">
+        <path fill="#fc3c17" stroke="none"
+              d="M 11.648438 0.644531 
+              C 6.039062 1.609375 2.105469 5.492188 0.53125 11.691406 
+              C -0.0429688 13.882812 0 17.980469 0.617188 20.273438 
+              C 1.847656 24.929688 5.464844 30.445312 10.4375 35.292969 
+              C 13.777344 38.554688 16.113281 40.25 22.003906 43.617188 
+              L 25.191406 45.464844 
+              L 26.574219 44.691406 
+              C 33.332031 40.914062 37.796875 37.417969 42.242188 32.417969 
+              C 46.003906 28.171875 48.425781 24.007812 49.363281 20.253906 
+              C 49.914062 17.9375 50.019531 13.472656 49.554688 11.585938 
+              C 49.128906 9.871094 47.578125 6.738281 46.449219 5.320312 
+              C 43.113281 1.117188 35.714844 -0.644531 31.144531 1.652344 
+              C 29.570312 2.46875 27.507812 3.992188 25.894531 5.535156 
+              L 24.449219 6.929688 
+              L 24 6.308594 
+              C 23.746094 5.964844 22.746094 4.914062 21.789062 3.96875 
+              C 18.730469 0.945312 15.730469 -0.0429688 11.648438 0.644531 
+              Z M 11.648438 0.644531"
+          />
+    </symbol>
+</svg>
+
+

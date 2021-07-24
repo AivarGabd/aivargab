@@ -1,0 +1,85 @@
+.peaches {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.peach {
+  position: absolute;
+  font-size: 5vw;  
+}
+.peach:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  transform: scale(0.6);
+}
+.peach:nth-child(2) {
+  top: 25%;
+  right: 13%;
+  transform: scale(0.74);
+}
+.peach:nth-child(3) {
+  top: 95%;
+  right: 15%;
+  transform: scale(0.7);
+}
+.peach:nth-child(4) {
+  top: 90%;
+  left: 15%;
+  transform: scale(0.8);
+}
+.peach:nth-child(5) {
+  top: 30%;
+  left: 15%;
+  transform: scale(0.4);
+}
+.peach:nth-child(6) {
+  top: 60%;
+  left: 10%;
+  transform: scale(0.6);
+}
+.peach:nth-child(7) {
+  top: 60%;
+  right: 10%;
+  transform: scale(0.9);
+}
+
+.peach:nth-child(8) {
+  top: 150%;
+  right: 10%;
+  transform: scale(0.8);
+}
+
+.peach:nth-child(9) {
+  top: 140%;
+  left: 10%;
+  transform: scale(1);
+}
+
+.peach:nth-child(10) {
+  top: 115%;
+  left: 7%;
+  transform: scale(0.6);
+}
+
+.peach:nth-child(11) {
+  top: 155%;
+  right: 10%;
+  transform: scale(0.6);
+}
+
+.peach:nth-child(12) {
+  top: 140%;
+  left: 10%;
+  transform: scale(0.6);
+}
+
+
+
+
