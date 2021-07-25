@@ -1,7 +1,10 @@
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 :root {
@@ -19,7 +22,6 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
   text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

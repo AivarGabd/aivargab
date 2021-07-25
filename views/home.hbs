@@ -5,15 +5,24 @@
 <link rel="stylesheet" href="/home/css/main-card.css">
 <link rel="stylesheet" href="/home/css/cards.css">
 <link rel="stylesheet" href="/home/css/background.css">
-<link rel="stylesheet" href="/home/css/fonts/stylesheet.css">
+
+
+
 
 
   <header>
     <div class="js-circle wrapper" id="circle">
       <div class="main_card">
+          <div class="main_info_block">
+            {{>home-svg}}
+          </div>
           <div class="tab">
-              <button id="ideaparallels-tab-button" onclick="tab_button_click(this)">ideaparallels</button>
-              <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">art-lebedev-patnashki</button>
+              <div id="ideaparallels-tab-button" onclick="tab_button_click(this)">
+                <button>ideaparallels</button>
+              </div>
+              <div id="art-lebedev-patnashki-tab-button" class="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
+                <button>art-lebedev-patnashki</button>
+              </div>
           </div>
           <div class="swiper-container">
               <div class="swiper-wrapper">
@@ -24,8 +33,7 @@
                     <a href="/i-love-ny">art-lebedev-patnashki</a>
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+          
             </div>
       </div>
     </div>
@@ -76,14 +84,10 @@
   </main>
 
 
-      <script src="background.js"></script>
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script>
         var swiper = new Swiper(".swiper-container", {
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
+          
         })
 
         function tab_button_click(element){           
@@ -96,19 +100,48 @@
         }
  
         document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
+        background_change(swiper.slides[swiper.activeIndex].id)
         fill_website_cards(swiper.slides[swiper.activeIndex].id)
+
         swiper.on('slideChange', ()=> {
           document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
+          background_change(swiper.slides[swiper.activeIndex].id)
           fill_website_cards(swiper.slides[swiper.activeIndex].id)
           swiper.slides.filter((x)=>{ return x !== swiper.slides[swiper.activeIndex]}).forEach(slider => {
             document.getElementById(slider.id+"-tab-button").classList.remove("active_tab_button")
           })
         })
         
+        function background_change(id){
+          if(id == "ideaparallels"){
+            let colors_array = {{{colors_array}}}
+            let offset = 0, timeout_milisec = 2000
+            let random_color = colors_array[Math.floor(Math.random() * colors_array.length)]
+            document.getElementsByTagName("body")[0].style.transition = 'all ' + timeout_milisec/1000 + 's'
+            document.getElementsByTagName("body")[0].style.backgroundColor = random_color
+
+            document.getElementById('ideaparallels-tab-button').style.transition = 'all ' + timeout_milisec/1000 + 's'
+            document.getElementById('ideaparallels-tab-button').style.backgroundColor = "#ffffffa4"
+           
+
+            document.getElementById(id).style.transition = 'all ' + timeout_milisec/1000 + 's'
+            document.getElementById(id).style.backgroundColor = "#ffffffa4"
+
+
+            for (let i = 0; i < 100; i++) {
+              setTimeout(function () {
+                random_color = colors_array[Math.floor(Math.random() * colors_array.length)]
+                document.getElementsByTagName("body")[0].style.backgroundColor = random_color
+              }, timeout_milisec + offset)
+              offset += timeout_milisec
+            }
+          }
+        }
 
         function fill_website_cards(id){
-          console.log(id)
+          //console.log(id)
         }
+        
       </script>
 </body>
 
