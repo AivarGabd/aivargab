@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/home/css/background.css">
 
 
-
+<div id="background_color"></div>
 
 
   <header>
@@ -17,12 +17,12 @@
             {{>home-svg}}
           </div>
           <div class="tab">
-              <div id="ideaparallels-tab-button" onclick="tab_button_click(this)">
-                <button>ideaparallels</button>
-              </div>
-              <div id="art-lebedev-patnashki-tab-button" class="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
-                <button>art-lebedev-patnashki</button>
-              </div>
+              <button id="ideaparallels-tab-button" onclick="tab_button_click(this)">
+                ideaparallels
+              </button>
+              <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
+                art-lebedev-patnashki
+              </button>
           </div>
           <div class="swiper-container">
               <div class="swiper-wrapper">
@@ -42,12 +42,13 @@
 
   <main>
     <ul id="cards">
-
+ 
       <li class="card" id="card_1">
         <div class="card__content">
           <div>
-            <h2>Backend</h2>
-            <div id="card1_content">
+            <div class="card_name">Nodejs</div>
+            <div id="card1_content" class="card_text">
+             
             </div>
           </div>
         </div>
@@ -56,8 +57,9 @@
       <li class="card" id="card_2">
         <div class="card__content">
           <div>
-            <h2>Frontend</h2>
-            <div id="card2_content">
+            <div class="card_name">Frontend</div>
+            <div id="card2_content" class="card_text">
+  
             </div>
           </div>
         </div>
@@ -66,31 +68,26 @@
       <li class="card" id="card_3">
         <div class="card__content">
           <div>
-            <h2>UX</h2>
-            <div id="card3_content">
+            <div class="card_name">UX</div>
+            <div id="card3_content" class="card_text">
+             
             </div>
           </div>
         </div>
       </li>
 
-      <li class="card" id="card_4">
-        <div class="card__content">
-          <div id="card4_content">
-          </div>
-        </div>
-      </li>
 
     </ul>
   </main>
 
 
+
+
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script>
-        var swiper = new Swiper(".swiper-container", {
-          
-        })
+        var swiper = new Swiper(".swiper-container")
 
-        function tab_button_click(element){           
+        function tab_button_click(element){      
           let sliders_array = document.getElementsByClassName('swiper-slide')
           for (let i=0;i<sliders_array.length;i++){
             if(sliders_array[i].id == element.id.replace('-tab-button', '')){
@@ -112,34 +109,87 @@
           })
         })
         
+  
         function background_change(id){
+          let projects = {{{projects_data.projects}}}       
+          let colors_array = projects.find(x => x.id == id).colors
+          
+
+          setTimeout( ()=> {document.getElementById('background_color').remove()}, 200)
+          let new_background_color = document.createElement("div")
+          new_background_color.setAttribute("id", "background_color")
+
           if(id == "ideaparallels"){
-            let colors_array = {{{colors_array}}}
-            let offset = 0, timeout_milisec = 2000
-            let random_color = colors_array[Math.floor(Math.random() * colors_array.length)]
-            document.getElementsByTagName("body")[0].style.transition = 'all ' + timeout_milisec/1000 + 's'
-            document.getElementsByTagName("body")[0].style.backgroundColor = random_color
-
-            document.getElementById('ideaparallels-tab-button').style.transition = 'all ' + timeout_milisec/1000 + 's'
-            document.getElementById('ideaparallels-tab-button').style.backgroundColor = "#ffffffa4"
-           
-
-            document.getElementById(id).style.transition = 'all ' + timeout_milisec/1000 + 's'
-            document.getElementById(id).style.backgroundColor = "#ffffffa4"
-
-
-            for (let i = 0; i < 100; i++) {
-              setTimeout(function () {
-                random_color = colors_array[Math.floor(Math.random() * colors_array.length)]
-                document.getElementsByTagName("body")[0].style.backgroundColor = random_color
-              }, timeout_milisec + offset)
-              offset += timeout_milisec
-            }
+            new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+            let offset = 0,timeout_milisec=2000
+            for (let i = 0; i < 200; i++) {
+                setTimeout( ()=> {
+                  new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+                }, timeout_milisec + offset)
+                offset += timeout_milisec
+              }
+          }else if(id == "art-lebedev-patnashki"){
+            new_background_color.classList.add('art-lebedev-patnashki-background')
+            
           }
+         
+          document.getElementsByTagName("body")[0].insertBefore(new_background_color, document.getElementsByTagName("header")[0])
         }
 
         function fill_website_cards(id){
-          //console.log(id)
+          for (let i = 0; i < document.getElementsByClassName('card_text').length; i++) {
+            document.getElementsByClassName('card_text')[i].innerHTML = ''
+          }
+          let projects = {{{projects_data.projects}}}   
+          let content = projects.find(x => x.id == id)
+
+
+
+          content.nodejs.forEach(nodejs=>{
+            let nodejs_block = document.createElement("div")
+            nodejs_block.setAttribute("class", "nodejs_block")
+
+            nodejs_name = document.createElement("div")
+            nodejs_name.setAttribute("class", "nodejs_name")
+            nodejs_name.innerHTML = nodejs.name
+            nodejs_block.appendChild(nodejs_name)
+
+
+            nodejs_description = document.createElement("div")
+            nodejs_description.setAttribute("class", "nodejs_description")
+            nodejs_description.innerHTML = nodejs.description
+            nodejs_block.appendChild(nodejs_description)
+      
+
+            document.getElementsByClassName('card_text')[0].appendChild(nodejs_block)
+          })
+
+  
+          content.Frontend.forEach(Frontend=>{
+            let Frontend_block = document.createElement("div")
+            Frontend_block.setAttribute("class", "Frontend_block")
+
+            Frontend_name = document.createElement("div")
+            Frontend_name.setAttribute("class", "nodejs_name")
+            Frontend_name.innerHTML = Frontend.name
+            Frontend_block.appendChild(Frontend_name)
+
+
+            Frontend_description = document.createElement("div")
+            Frontend_description.setAttribute("class", "Frontend_description")
+            Frontend_description.innerHTML = Frontend.description
+            Frontend_block.appendChild(Frontend_description)
+            document.getElementsByClassName('card_text')[1].appendChild(Frontend_block)
+          })
+
+          content.UX.forEach(UX=>{
+            let UX_block = document.createElement("div")
+            UX_block.setAttribute("class", "UX_block")
+            UX_block.innerHTML = UX
+            document.getElementsByClassName('card_text')[2].appendChild(UX_block)
+          })
+          
+
         }
         
       </script>
