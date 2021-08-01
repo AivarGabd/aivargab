@@ -5,223 +5,300 @@
 <link rel="stylesheet" href="/home/css/main-card.css">
 <link rel="stylesheet" href="/home/css/cards.css">
 <link rel="stylesheet" href="/home/css/background.css">
-
+<script>
+  let projects = {{{projects_data.projects}}}
+</script>
 
 <div id="background_color"></div>
 
+<header>
+  <div class="main_card">
+    <div class="main_info_block" id="main_info_block">
 
-  <header>
-      <div class="main_card">
-          <div class="main_info_block" id="main_info_block">
-            {{>home-svg}}
-          </div>
-          <div class="tab">
-              <button id="ideaparallels-tab-button" onclick="tab_button_click(this)">
-                ideaparallels
-              </button>
-              <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
-                art-lebedev-patnashki
-              </button>
-          </div>
-          <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide" id="ideaparallels">
-                    <a href="https://www.ideaparallels.ru/">ideaparallels</a>
-                </div>
-                <div class="swiper-slide" id="art-lebedev-patnashki">
-                    <a href="/i-love-ny">art-lebedev-patnashki</a>
-                </div>
-              </div>
-            </div>
+      <a href="https://www.behance.net/aivargabdr4f14/moodboards">
+        <div>
+          <svg viewBox="0 0 512 512">
+            <g transform="translate(0,522) scale(0.1,-0.1)" id="behance">
+              <path d="M0 2595 l0 -1585 889 0 c964 0 965 0 1143 56 279 88 480 269 567 510
+                98 270 75 661 -52 884 -44 79 -149 180 -222 214 -58 27 -163 55 -215 56 -15 1
+                -4 7 29 16 192 52 335 196 388 394 27 97 24 336 -6 445 -85 320 -327 526 -681
+                580 -77 12 -256 15 -967 15 l-873 0 0 -1585z m1703 1011 c130 -47 190 -190
+                168 -405 -12 -109 -34 -170 -81 -224 -57 -65 -73 -67 -597 -67 l-463 0 0 355
+                0 355 468 0 c364 -1 475 -4 505 -14z m79 -1224 c142 -70 200 -189 201 -407 0
+                -87 -4 -122 -21 -169 -30 -82 -68 -134 -127 -171 -96 -61 -78 -59 -612 -63
+                l-493 -3 0 426 0 426 493 -3 492 -3 67 -33z" />
+              <path d="M3322 3798 l3 -193 653 -3 652 -2 0 195 0 195 -655 0 -655 0 2 -192z" />
+              <path d="M3783 3359 c-177 -27 -352 -91 -480 -176 -194 -128 -361 -360 -441
+                -613 -58 -182 -67 -247 -67 -465 0 -184 2 -209 27 -306 103 -408 327 -662 688
+                -783 143 -48 256 -66 445 -73 485 -17 862 136 1033 419 57 95 102 258 102 369
+                l0 49 -280 0 -280 0 0 -23 c0 -85 -83 -198 -181 -248 -166 -84 -432 -88 -603
+                -10 -75 34 -160 111 -203 183 -37 61 -73 189 -73 260 l0 48 819 0 818 0 7 38
+                c11 66 6 238 -9 355 -71 541 -334 856 -803 963 -81 18 -428 27 -519 13z m330
+                -460 c194 -30 319 -148 372 -354 8 -32 15 -74 15 -92 l0 -33 -520 0 -520 0 6
+                28 c80 324 331 500 647 451z" />
+            </g>
+          </svg>
+        </div>
+      </a>
+
+      <a href="https://github.com/AivarGabd">
+        <div>
+          <svg viewBox="0 0 50 50">
+            <g id="github">
+              <path d="M 25 0 C 11.1875 0 0 11.1875 0 25 C 0 36.0625 7.15625 45.40625 17.09375 48.71875 
+                      C 18.34375 48.9375 18.8125 48.1875 18.8125 47.53125 
+                      C 18.8125 46.9375 18.78125 44.96875 18.78125 42.875 
+                      C 12.5 44.03125 10.875 41.34375 10.375 39.9375 
+                      C 10.09375 39.21875 8.875 37 7.8125 36.40625 
+                      C 6.9375 35.9375 5.6875 34.78125 7.78125 34.75 
+                      C 9.75 34.71875 11.15625 36.5625 11.625 37.3125 
+                      C 13.875 41.09375 17.46875 40.03125 18.90625 39.375 
+                      C 19.125 37.75 19.78125 36.65625 20.5 36.03125 
+                      C 14.9375 35.40625 9.125 33.25 9.125 23.6875 
+                      C 9.125 20.96875 10.09375 18.71875 11.6875 16.96875 
+                      C 11.4375 16.34375 10.5625 13.78125 11.9375 10.34375 
+                      C 11.9375 10.34375 14.03125 9.6875 18.8125 12.90625 
+                      C 20.8125 12.34375 22.9375 12.0625 25.0625 12.0625 
+                      C 27.1875 12.0625 29.3125 12.34375 31.3125 12.90625 
+                      C 36.09375 9.65625 38.1875 10.34375 38.1875 10.34375 
+                      C 39.5625 13.78125 38.6875 16.34375 38.4375 16.96875 
+                      C 40.03125 18.71875 41 20.9375 41 23.6875 
+                      C 41 33.28125 35.15625 35.40625 29.59375 36.03125 
+                      C 30.5 36.8125 31.28125 38.3125 31.28125 40.65625 
+                      C 31.28125 44 31.25 46.6875 31.25 47.53125 
+                      C 31.25 48.1875 31.71875 48.96875 32.96875 48.71875 
+                      C 42.84375 45.40625 50 36.03125 50 25 
+                      C 50 11.1875 38.8125 0 25 0 Z M 25 0 " />
+            </g>
+
+          </svg>
+        </div>
+      </a>
+
+      <a href="https://codepen.io/Aivar/pens/loved">
+        <div>
+          <svg viewBox="0 0 512 512">
+            <g transform="translate(0,512) scale(0.1,-0.1)" id="codepen">
+              <path d="M2495 5109 c-16 -4 -569 -369 -1230 -809 -847 -565 -1207 -810 -1223
+        -834 -12 -18 -27 -48 -32 -67 -13 -46 -13 -1632 0 -1678 5 -19 20 -49 32 -67
+        16 -24 377 -270 1229 -838 1278 -852 1237 -827 1331 -811 56 10 2441 1597
+        2476 1649 12 18 27 48 32 67 13 46 13 1632 0 1678 -5 19 -20 49 -32 67 -27 40
+        -2402 1628 -2458 1644 -41 12 -84 12 -125 -1z m-155 -1132 l0 -514 -467 -313
+        c-257 -173 -474 -314 -483 -314 -16 -1 -770 493 -769 504 0 4 1707 1147 1717
+        1149 1 1 2 -230 2 -512z m2159 -637 c0 -5 -744 -502 -761 -509 -5 -2 -223 140
+        -484 315 l-474 318 0 513 0 513 860 -572 c473 -315 859 -575 859 -578z m-1554
+        -517 c212 -141 385 -259 385 -263 0 -4 -173 -122 -385 -263 l-385 -257 -385
+        257 c-212 141 -384 260 -383 265 2 6 754 514 766 517 1 1 175 -114 387 -256z
+        m-1970 -263 c0 -5 -120 -90 -267 -189 l-268 -180 0 369 0 369 268 -180 c147
+        -99 267 -184 267 -189z m3705 1 l0 -368 -267 178 c-148 99 -268 184 -268 189
+        0 7 497 351 533 369 1 0 2 -165 2 -368z m-2806 -591 l466 -313 0 -514 0 -513
+        -860 572 c-473 315 -859 575 -859 578 0 13 756 509 771 506 9 -2 226 -144 482
+        -316z m2250 65 c206 -137 375 -252 375 -255 0 -3 -386 -263 -859 -578 l-860
+        -572 0 513 0 513 473 317 c259 174 477 316 483 315 7 -2 181 -115 388 -253z" />
+            </g>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+    <div class="tab">
+      <button id="ideaparallels-tab-button" onclick="tab_button_click(this)">
+        ideaparallels
+      </button>
+      <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
+        art-lebedev-patnashki
+      </button>
+    </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="ideaparallels">
+          <a href="https://www.ideaparallels.ru/">ideaparallels</a>
+        </div>
+        <div class="swiper-slide" id="art-lebedev-patnashki">
+          <a href="/i-love-ny">art-lebedev-patnashki</a>
+        </div>
       </div>
-    
-  </header>
+    </div>
+  </div>
+
+</header>
 
 
 
 
 
-  <main>
-    <ul id="cards">
- 
-      <li class="card" id="card_1">
-        <div class="card__content">
-          <div>
-            <div class="card_name">Nodejs</div>
-            <div id="card1_content" class="card_text">
-             
-            </div>
+<main>
+  <ul id="cards">
+
+    <li class="card" id="card_1">
+      <div class="card__content">
+        <div>
+          <div class="card_name">Nodejs</div>
+          <div id="card1_content" class="card_text">
+
           </div>
         </div>
-      </li>
+      </div>
+    </li>
 
-      <li class="card" id="card_2">
-        <div class="card__content">
-          <div>
-            <div class="card_name">Frontend</div>
-            <div id="card2_content" class="card_text">
-  
-            </div>
+    <li class="card" id="card_2">
+      <div class="card__content">
+        <div>
+          <div class="card_name">Frontend</div>
+          <div id="card2_content" class="card_text">
+
           </div>
         </div>
-      </li>
+      </div>
+    </li>
 
-      <li class="card" id="card_3">
-        <div class="card__content">
-          <div>
-            <div class="card_name">UX</div>
-            <div id="card3_content" class="card_text">
-             
-            </div>
+    <li class="card" id="card_3">
+      <div class="card__content">
+        <div>
+          <div class="card_name">UX</div>
+          <div id="card3_content" class="card_text">
+
           </div>
         </div>
-      </li>
+      </div>
+    </li>
 
 
-    </ul>
-  </main>
-
-
-
-
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-      <script>
-        var swiper = new Swiper(".swiper-container")
-
-        function tab_button_click(element){      
-          let sliders_array = document.getElementsByClassName('swiper-slide')
-          for (let i=0;i<sliders_array.length;i++){
-            if(sliders_array[i].id == element.id.replace('-tab-button', '')){
-              swiper.slideTo(i, 500, true)
-            }
-          }
-        }
- 
-        document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
-        background_change(swiper.slides[swiper.activeIndex].id)
-        fill_website_cards(swiper.slides[swiper.activeIndex].id)
-
-        swiper.on('slideChange', ()=> {
-          document.getElementById(swiper.slides[swiper.activeIndex].id+"-tab-button").classList.add("active_tab_button")
-          background_change(swiper.slides[swiper.activeIndex].id)
-          fill_website_cards(swiper.slides[swiper.activeIndex].id)
-          swiper.slides.filter((x)=>{ return x !== swiper.slides[swiper.activeIndex]}).forEach(slider => {
-            document.getElementById(slider.id+"-tab-button").classList.remove("active_tab_button")
-          })
-        })
-        
-  
-        function background_change(id){
-          let projects = {{{projects_data.projects}}}       
-          let colors_array = projects.find(x => x.id == id).colors
-          
-
-          setTimeout( ()=> {document.getElementById('background_color').remove()}, 200)
-          let new_background_color = document.createElement("div")
-          new_background_color.setAttribute("id", "background_color")
+  </ul>
+</main>
 
 
 
-          if(id == "ideaparallels"){
-            //Set backgorund color
-            new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
-            let offset = 0,timeout_milisec=2000
-            for (let i = 0; i < 200; i++) {
-                setTimeout( ()=> {
-                  new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
-                }, timeout_milisec + offset)
-                offset += timeout_milisec
-              }
 
-            
-            
-
-          
-            //Set main block info buttons class
-            let main_info_buttons = document.getElementById('main_info_block').children
-            for(let i = 0;i<main_info_buttons.length;i++){
-              main_info_buttons[i].classList.remove("art_lebedev_main_info_buttons")
-              main_info_buttons[i].classList.add("ideaparallels_main_info_buttons")
-            }
-
-              
-          }else if(id == "art-lebedev-patnashki"){
-            //change background color
-            new_background_color.classList.add('art-lebedev-patnashki-background')
-
-            //Remove main info buttons class
-            let main_info_buttons = document.getElementById('main_info_block').children
-            for(let i = 0;i<main_info_buttons.length;i++){
-              main_info_buttons[i].classList.remove("ideaparallels_main_info_buttons")
-              main_info_buttons[i].classList.add("art_lebedev_main_info_buttons")
-            }
-          }
-         
-          document.getElementsByTagName("body")[0].insertBefore(new_background_color, document.getElementsByTagName("header")[0])
-        }
-
-        function fill_website_cards(id){
-          for (let i = 0; i < document.getElementsByClassName('card_text').length; i++) {
-            document.getElementsByClassName('card_text')[i].innerHTML = ''
-          }
-          let projects = {{{projects_data.projects}}}   
-          let content = projects.find(x => x.id == id)
-
-
-
-          content.nodejs.forEach(nodejs=>{
-            let nodejs_block = document.createElement("div")
-            nodejs_block.setAttribute("class", "nodejs_block")
-
-            nodejs_name = document.createElement("div")
-            nodejs_name.setAttribute("class", "nodejs_name")
-            nodejs_name.innerHTML = nodejs.name
-            nodejs_block.appendChild(nodejs_name)
-
-
-            nodejs_description = document.createElement("div")
-            nodejs_description.setAttribute("class", "nodejs_description")
-            nodejs_description.innerHTML = nodejs.description
-            nodejs_block.appendChild(nodejs_description)
-      
-
-            document.getElementsByClassName('card_text')[0].appendChild(nodejs_block)
-          })
-
-  
-          content.Frontend.forEach(Frontend=>{
-            let Frontend_block = document.createElement("div")
-            Frontend_block.setAttribute("class", "Frontend_block")
-
-            Frontend_name = document.createElement("div")
-            Frontend_name.setAttribute("class", "nodejs_name")
-            Frontend_name.innerHTML = Frontend.name
-            Frontend_block.appendChild(Frontend_name)
-
-
-            Frontend_description = document.createElement("div")
-            Frontend_description.setAttribute("class", "Frontend_description")
-            Frontend_description.innerHTML = Frontend.description
-            Frontend_block.appendChild(Frontend_description)
-            document.getElementsByClassName('card_text')[1].appendChild(Frontend_block)
-          })
-
-          content.UX.forEach(UX=>{
-            let UX_block = document.createElement("div")
-            UX_block.setAttribute("class", "UX_block")
-            UX_block.innerHTML = UX
-            document.getElementsByClassName('card_text')[2].appendChild(UX_block)
-          })
-          
-
-        }
-        
-      </script>
-</body>
-
-</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
+  var swiper = new Swiper(".swiper-container")
 
+  function tab_button_click(element) {
+    let sliders_array = document.getElementsByClassName('swiper-slide')
+    for (let i = 0; i < sliders_array.length; i++) {
+      if (sliders_array[i].id == element.id.replace('-tab-button', '')) {
+        swiper.slideTo(i, 500, true)
+      }
+    }
+  }
+
+  document.getElementById(swiper.slides[swiper.activeIndex].id + "-tab-button").classList.add("active_tab_button")
+  background_change(swiper.slides[swiper.activeIndex].id)
+  fill_website_cards(swiper.slides[swiper.activeIndex].id)
+
+  swiper.on('slideChange', () => {
+    document.getElementById(swiper.slides[swiper.activeIndex].id + "-tab-button").classList.add("active_tab_button")
+    background_change(swiper.slides[swiper.activeIndex].id)
+    fill_website_cards(swiper.slides[swiper.activeIndex].id)
+    swiper.slides.filter((x) => {return x !== swiper.slides[swiper.activeIndex]}).forEach(slider => {
+      document.getElementById(slider.id + "-tab-button").classList.remove("active_tab_button")
+    })
+  })
+
+
+
+
+  function background_change(id) {
+    let colors_array = projects.find(x => x.id == id).colors
+
+
+    setTimeout(() => {document.getElementById('background_color').remove()}, 200)
+    let new_background_color = document.createElement("div")
+    new_background_color.setAttribute("id", "background_color")
+
+
+
+    if (id == "ideaparallels") {
+      //Set backgorund color
+      new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+      let offset = 0, timeout_milisec = 2000
+      for (let i = 0; i < 200; i++) {
+        setTimeout(() => {
+          new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
+        }, timeout_milisec + offset)
+        offset += timeout_milisec
+      }
+
+      //Svg buttons
+      let main_info = document.getElementById('main_info_block').children
+      for (let i = 0; i < main_info.length; i++) {
+        console.log(main_info[i].children[0])
+        main_info[i].children[0].classList.remove("art_lebedes_svg")
+        main_info[i].children[0].classList.add("ideaparallels_svg")
+      }
+
+
+    } else if (id == "art-lebedev-patnashki") {
+      //change background color
+      new_background_color.classList.add('art-lebedev-patnashki-background')
+
+      //Svg buttons
+      let main_info = document.getElementById('main_info_block').children
+      for (let i = 0; i < main_info.length; i++) {
+        main_info[i].children[0].classList.remove("ideaparallels_svg")
+        main_info[i].children[0].classList.add("art_lebedes_svg")
+      }
+
+    }
+
+    document.getElementsByTagName("body")[0].insertBefore(new_background_color, document.getElementsByTagName("header")[0])
+  }
+
+  function fill_website_cards(id) {
+    for (let i = 0; i < document.getElementsByClassName('card_text').length; i++) {
+      document.getElementsByClassName('card_text')[i].innerHTML = ''
+    }
+    let content = projects.find(x => x.id == id)
+
+
+
+    content.nodejs.forEach(nodejs => {
+      let nodejs_block = document.createElement("div")
+      nodejs_block.setAttribute("class", "nodejs_block")
+
+      nodejs_name = document.createElement("div")
+      nodejs_name.setAttribute("class", "nodejs_name")
+      nodejs_name.innerHTML = nodejs.name
+      nodejs_block.appendChild(nodejs_name)
+
+
+      nodejs_description = document.createElement("div")
+      nodejs_description.setAttribute("class", "nodejs_description")
+      nodejs_description.innerHTML = nodejs.description
+      nodejs_block.appendChild(nodejs_description)
+
+
+      document.getElementsByClassName('card_text')[0].appendChild(nodejs_block)
+    })
+
+
+    content.Frontend.forEach(Frontend => {
+      let Frontend_block = document.createElement("div")
+      Frontend_block.setAttribute("class", "Frontend_block")
+
+      Frontend_name = document.createElement("div")
+      Frontend_name.setAttribute("class", "nodejs_name")
+      Frontend_name.innerHTML = Frontend.name
+      Frontend_block.appendChild(Frontend_name)
+
+
+      Frontend_description = document.createElement("div")
+      Frontend_description.setAttribute("class", "Frontend_description")
+      Frontend_description.innerHTML = Frontend.description
+      Frontend_block.appendChild(Frontend_description)
+      document.getElementsByClassName('card_text')[1].appendChild(Frontend_block)
+    })
+
+    content.UX.forEach(UX => {
+      let UX_block = document.createElement("div")
+      UX_block.setAttribute("class", "UX_block")
+      UX_block.innerHTML = UX
+      document.getElementsByClassName('card_text')[2].appendChild(UX_block)
+    })
+
+
+  }
 
 </script>
-
+</body>
