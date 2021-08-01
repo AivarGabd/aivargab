@@ -11,7 +11,6 @@
 
 
   <header>
-    <div class="js-circle wrapper" id="circle">
       <div class="main_card">
           <div class="main_info_block">
             {{>home-svg}}
@@ -33,11 +32,13 @@
                     <a href="/i-love-ny">art-lebedev-patnashki</a>
                 </div>
               </div>
-          
             </div>
       </div>
-    </div>
+    
   </header>
+
+
+
 
 
   <main>
@@ -128,6 +129,8 @@
                 }, timeout_milisec + offset)
                 offset += timeout_milisec
               }
+
+              
           }else if(id == "art-lebedev-patnashki"){
             new_background_color.classList.add('art-lebedev-patnashki-background')
             
