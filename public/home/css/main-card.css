@@ -4,13 +4,16 @@
     width: 34%;
     margin: 0% auto auto auto;
     padding: 10% 10px 10px 10px;
+    animation: fade-in 0.2s;
 }
 
 .main_info_block {
     padding: 10px;
     text-align: left;
+}
+
+#main_info_svg_buttons {
     background-color: transparent;
-    animation: fade-in 0.2s;
 }
 
 .main_info_block button {
@@ -18,33 +21,33 @@
     padding: 8px;
     border: 0;
     border-radius: 50%;
-    transition: all 1s;
-    border: none;
-    background: none;
-    outline: none;
-    color: black;
+}
+
+.ideaparallels_main_info_buttons {
     mix-blend-mode: screen;
     background-color: white;
 }
 
-.main_info_block button::before {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    mix-blend-mode: color-burn;
+.ideaparallels_main_info_buttons g {}
+
+.art_lebedev_main_info_buttons g {
+    mix-blend-mode: normal;
+    fill: #fc3c17;
+}
+
+g {
+    fill: gray;
 }
 
 .main_info_block button:hover {
     cursor: pointer;
-    background-color: rgba(181, 181, 181, 0.624);
+    background-color: #b5b5b59f;
     border-radius: 20px;
 }
 
 .main_info_block button svg {
-    width: 18;
-    height: 18;
+    width: 25;
+    height: 25;
 }
 
 .tab {

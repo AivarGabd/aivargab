@@ -12,7 +12,7 @@
 
   <header>
       <div class="main_card">
-          <div class="main_info_block">
+          <div class="main_info_block" id="main_info_block">
             {{>home-svg}}
           </div>
           <div class="tab">
@@ -120,7 +120,10 @@
           let new_background_color = document.createElement("div")
           new_background_color.setAttribute("id", "background_color")
 
+
+
           if(id == "ideaparallels"){
+            //Set backgorund color
             new_background_color.style.backgroundColor = colors_array[Math.floor(Math.random() * colors_array.length)]
             let offset = 0,timeout_milisec=2000
             for (let i = 0; i < 200; i++) {
@@ -130,10 +133,28 @@
                 offset += timeout_milisec
               }
 
+            
+            
+
+          
+            //Set main block info buttons class
+            let main_info_buttons = document.getElementById('main_info_block').children
+            for(let i = 0;i<main_info_buttons.length;i++){
+              main_info_buttons[i].classList.remove("art_lebedev_main_info_buttons")
+              main_info_buttons[i].classList.add("ideaparallels_main_info_buttons")
+            }
+
               
           }else if(id == "art-lebedev-patnashki"){
+            //change background color
             new_background_color.classList.add('art-lebedev-patnashki-background')
-            
+
+            //Remove main info buttons class
+            let main_info_buttons = document.getElementById('main_info_block').children
+            for(let i = 0;i<main_info_buttons.length;i++){
+              main_info_buttons[i].classList.remove("ideaparallels_main_info_buttons")
+              main_info_buttons[i].classList.add("art_lebedev_main_info_buttons")
+            }
           }
          
           document.getElementsByTagName("body")[0].insertBefore(new_background_color, document.getElementsByTagName("header")[0])
