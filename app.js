@@ -169,5 +169,10 @@ app.get("/i-love-ny-life", async(req, res) => {
     res.render("i-love-ny-life");
 });
 
+app.get("/ideaparallels-texteditor", async(req, res) => {
+    res.render("ideaparallels-texteditor");
+});
+
+
 const PORT = process.env.PORT || 3010;
 app.listen(PORT, console.log(`Server started on http://localhost:${PORT}/`));

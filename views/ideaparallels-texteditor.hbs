@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/ideaparallels-text-editor/css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<main>
+    <div class="chapter">
+        Глава 1 Ничем не выделяющееся животное
+    </div>
+    <div class="subchapter">
+        Скелеты в шкафу
+    </div>
+    <div class="subchapter_block" id="subchapter_block">
+
+        <div class="idea_block">
+            <button class="add_content" title="Добавить идею" onclick="add_idea(this)">+</button>
+        </div>
+
+
+
+    </div>
+
+</main>
+
+<script>
+    let first_subchapter_txt = "Homo sapiens скрывает секрет и помрачнее: у нас не только имеется множество диких родственников, но были некогда родные братья и сестры. Мы присвоили себе наименование «человек», но когда-то род «человек» включал в себя несколько видов. Люди – то есть животные из рода Homo – появились в Восточной Африке примерно 2,5 миллиона лет назад как ветвь более древнего рода обезьян Australopithecus, то бишь «южных обезьян». А два миллиона лет назад часть древних мужчин и женщин покинули родину и отправились блуждать по обширным пространствам Северной Африки, Европы и Азии, где и расселились. Поскольку для выживания в заснеженных лесах Северной Европы требовались иные качества, чем для существования в душных джунглях Индонезии, человеческие популяции развивались в разных направлениях, и в результате появились разные виды, каждому из которых ученые придумали пышное латинское название. В Европе и Западной Азии закрепился Homo neanderthalensis (человек из долины Неандер), обычно именуемый попросту «неандертальцем». Неандертальцы, более плотного и мускулистого сложения, чем современные люди, удачно приспособились к холодному климату Европы ледникового периода. На острове Ява обитал Homo soloensis (человек из долины Соло), более приспособленный к жизни в тропиках. На другом индонезийском острове, маленьком островке Флорес, поселились существа, которых теперь популярная пресса склонна сравнивать с хоббитами. Эти вооруженные копьями карлики ростом не выше метра весили в среднем 25 килограммов, но в отваге им не откажешь. Они охотились даже на местных слонов – впрочем, и слоны тут были карликовые. Открытые пространства Азии осваивал Homo erectus (человек прямоходящий), и этот самый устойчивый вид человека продержался там более 1,5 миллиона лет. В 2010 году из пучин забвения вернулся еще один утраченный братец: при раскопках Денисовой пещеры в Сибири обнаружилась окаменевшая фаланга пальца. Генетический анализ доказал, что палец принадлежит неведомому прежде виду человека, который и назвали соответственно денисовским человеком, Homo denisova. Кто знает, сколько еще забытых родичей дожидается, пока их обнаружат – в других пещерах, на островах, в иных климатических зонах! Пока эти виды людей развивались в Европе и Азии, в Восточной Африке тоже продолжалась эволюция. Колыбель человечества взращивала все новые виды, в том числе Homo rudolfensis (человек с озера Рудольф), Homo ergaster (человек работающий) и в итоге наш собственный вид, который мы без ложной скромности окрестили Homo sapiens (человек разумный). Некоторые виды людей удались крупными, другие были карлики. Имелись среди них бесстрашные охотники и робкие собиратели растительной пищи. Кто-то обитал исключительно в пределах одного острова, а кто-то осваивал целые континенты. Но все это были представители рода Homo, иными словами – человечества. Популярно заблуждение, будто все эти виды сменяли друг друга как преемники: эргастер порождает эректуса, эректус – неандертальца, а от неандертальца ведем род мы с вами. Линейная модель создает ложное ощущение, будто в каждый момент времени на Земле обитал лишь один человеческий вид и все древние виды представляют собой устаревшие модели современного человека. На самом деле почти два миллиона лет – примерно до VIII тысячелетия до н. э. – несколько человеческих видов существовало одновременно. Собственно, почему нет? Живут же сейчас многие виды медведей: бурые медведи, барибалы, гризли, полярные медведи. Когда-то по Земле разгуливало по меньшей мере шесть видов человека. Исключением из правил (исключением, которое бросает на нас зловещую тень подозрения) является как раз нынешняя эксклюзивность, а не разнообразное прошлое. Скоро мы убедимся в том, что у Homo sapiens есть причины подавлять любое воспоминание о вымерших собратьях."
+
+    function add_idea(element) {
+
+        let subchapter_add_idea_block = document.createElement('div')
+        subchapter_add_idea_block.classList.toggle('subchapter_add_idea_block')
+        subchapter_add_idea_block.setAttribute('id', 'subchapter_add_idea_block')
+        subchapter_add_idea_block.innerHTML = "Выделите идею, которую хотели добавить к книге как обычный текст."
+
+
+        let subchapter_text = document.createElement('div')
+        subchapter_text.innerHTML = first_subchapter_txt
+        subchapter_text.classList.toggle('subchapter_text')
+        subchapter_text.setAttribute('spellcheck', false)
+        subchapter_text.setAttribute('id', 'subchapter_text')
+        subchapter_text.onmouseup = () => {
+            if (getSelectionText()) {
+
+                Swal.fire({
+                    title: '',
+                    html:
+                        '<div class="sweetalert_header">Добавить идею:</div>' +
+                        '<div class="sweetalert_idea" id="sweetalert_idea">' +
+                        getSelectionText() +
+                        '</div>' +
+                        '<button onclick="submit_add_idea()" class="sweetalert_button">Добавить</button>' +
+                        '<button onclick="cancel_add_idea()" class="sweetalert_button">Отмена</button>',
+                    customClass: 'swal-wide',
+                    showCancelButton: false,
+                    showConfirmButton: false
+                })
+
+                clear_all_selections()
+            }
+        };
+
+
+        element.parentNode.style.display = "none"
+        subchapter_add_idea_block.appendChild(subchapter_text)
+        document.getElementById('subchapter_block').appendChild(subchapter_add_idea_block);
+
+        subchapter_text.style.height = subchapter_text.scrollHeight + "px"
+
+
+
+    }
+
+    function submit_add_idea() {
+        console.log(document.getElementById('sweetalert_idea').innerHTML)
+    }
+
+    function cancel_add_idea() {
+        Swal.close();
+    }
+
+    function clear_all_selections() {
+        if (window.getSelection) {
+            if (window.getSelection().empty) {
+                window.getSelection().empty();
+            } else if (window.getSelection().removeAllRanges) {
+                window.getSelection().removeAllRanges();
+            }
+        } else if (document.selection) {
+            document.selection.empty();
+        }
+    }
+
+
+
+
+
+    function getSelectionText() {
+
+        var text = "";
+        var activeEl = document.activeElement;
+        var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+        if (
+            (activeElTagName == "textarea") || (activeElTagName == "input" &&
+                /^(?:text|search|password|tel|url)$/i.test(activeEl.type)) &&
+            (typeof activeEl.selectionStart == "number")
+        ) {
+            text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
+        } else if (window.getSelection) {
+            text = window.getSelection().toString();
+        }
+        return text.length > 0 ? text : false
+
+    }
+</script>

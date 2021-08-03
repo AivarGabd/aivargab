@@ -23,8 +23,8 @@
     position: sticky;
     top: 0;
     padding-top: calc(var(--index) * var(--card-top-offset));
-    width: 34%;
     margin: 0 auto;
+    width: 34%;
 }
 
 #cards {
