@@ -9,19 +9,21 @@
     </div>
 
     <div class="subchapter">
-        Скелеты в шкафу
+        *Подглава 1: "Скелеты в шкафу"
     </div>
     <div class="subchapter_block" id="subchapter_block0">
-        <div class="idea_block">
+
+
+        <div class="idea_block add_idea_block" id="add_idea_block0">
             <button class="add_content" title="Добавить идею" onclick="add_idea(this)" id="0">+</button>
         </div>
     </div>
 
     <div class="subchapter">
-        Цена разума
+        *Подглава 2: "Цена разума"
     </div>
     <div class="subchapter_block" id="subchapter_block1">
-        <div class="idea_block">
+        <div class="idea_block add_idea_block" id="add_idea_block1">
             <button class="add_content" title="Добавить идею" onclick="add_idea(this)" id="1">+</button>
         </div>
     </div>
@@ -37,20 +39,17 @@
             subchapter_texts_array[i].remove()
         }
 
-
-
-
         let subchapter_add_idea_block = document.createElement('div')
         subchapter_add_idea_block.classList.toggle('subchapter_add_idea_block')
         subchapter_add_idea_block.setAttribute('id', 'subchapter_add_idea_block' + element.id)
-        subchapter_add_idea_block.innerHTML = "Выделите идею, которую хотели добавить к книге как обычный текст."
+        subchapter_add_idea_block.innerHTML = "Выделите идею которую хотели бы добавить на сайт:"
 
         let cancel_button = document.createElement('button')
         cancel_button.classList.toggle('cancel_button')
         cancel_button.innerHTML = "X"
         cancel_button.onclick = function () {
 
-            let idea_blocks_array = document.getElementsByClassName('idea_block')
+            let idea_blocks_array = document.getElementsByClassName('add_content')
             for (let i = 0; i < idea_blocks_array.length; i++) {
                 idea_blocks_array[i].style.display = "flex"
             }
@@ -77,9 +76,9 @@
                     html:
                         '<div class="sweetalert_header">Добавить идею?</div>' +
                         '<div class="sweetalert_idea" id="sweetalert_idea">' +
-                        getSelectionText() +
+                            getSelectionText() +
                         '</div>' +
-                        '<button onclick="submit_add_idea()" class="sweetalert_button">Добавить</button>' +
+                        '<button onclick="submit_add_idea('+element.id+')" class="sweetalert_button">Добавить</button>' +
                         '<button onclick="cancel_add_idea()" class="sweetalert_button">Отмена</button>',
                     customClass: 'swal-wide',
                     showCancelButton: false,
@@ -103,7 +102,7 @@
         })
 
 
-        let idea_blocks_array = document.getElementsByClassName('idea_block')
+        let idea_blocks_array = document.getElementsByClassName('add_content')
         for (let i = 0; i < idea_blocks_array.length; i++) {
             idea_blocks_array[i].style.display = "none"
         }
@@ -113,8 +112,25 @@
         subchapter_text.style.height = subchapter_text.scrollHeight + "px"
     }
 
-    function submit_add_idea() {
-        console.log(document.getElementById('sweetalert_idea').innerHTML)
+    function submit_add_idea(id) {
+        let subchapter_texts_array = document.getElementsByClassName('subchapter_add_idea_block')
+        for (i = 0; i < subchapter_texts_array.length; i++) {
+            subchapter_texts_array[i].remove()
+        }
+        let new_idea = document.createElement('div')
+        new_idea.classList.toggle('idea_block')
+        new_idea.innerHTML = document.getElementById('sweetalert_idea').innerHTML
+        let parentElement = document.getElementById('subchapter_block'+id)
+        let theFirstChild = document.getElementById('add_idea_block'+id)
+        parentElement.insertBefore(new_idea, theFirstChild);
+
+
+        Swal.close();
+
+        let add_idea_buttons = document.getElementsByClassName('add_content')
+        for(let i=0; i < add_idea_buttons.length;i++){
+            add_idea_buttons[i].style.display = "flex"
+        }
     }
 
     function cancel_add_idea() {
