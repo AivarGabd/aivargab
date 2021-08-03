@@ -154,7 +154,6 @@ let projects = [{
 
 app.get("/", async(req, res) => {
     let projects_data = { projects: JSON.stringify(projects) };
-
     res.render("home", { projects_data });
 });
 
@@ -170,7 +169,8 @@ app.get("/i-love-ny-life", async(req, res) => {
 });
 
 app.get("/ideaparallels-texteditor", async(req, res) => {
-    res.render("ideaparallels-texteditor");
+    let texts = fs.readFileSync('public/ideaparallels-text-editor/book_subchapters.json', 'utf8')
+    res.render("ideaparallels-texteditor", { texts });
 });
 
 
