@@ -83,6 +83,11 @@
         text-decoration-color: #fc3c17;
     }
     
+    #ideaparallels-texteditor,
+    #ideaparallels-texteditor-tab-button {
+        background-color: white;
+    }
+    
     .swiper-container {
         margin-top: 10px;
         border-radius: 10px;

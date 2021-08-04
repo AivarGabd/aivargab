@@ -150,6 +150,13 @@ let projects = [{
             "<a href='https://www.artlebedev.ru/i-love-ny/'>Пятнашки «Я люблю Нью-Йорк»</a>",
         ],
     },
+    {
+        id: "ideaparallels-texteditor",
+        colors: ["#816890"],
+        nodejs: [],
+        Frontend: [],
+        UX: []
+    }
 ];
 
 app.get("/", async(req, res) => {

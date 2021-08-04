@@ -108,6 +108,9 @@
       <button id="art-lebedev-patnashki-tab-button" onclick="tab_button_click(this)">
         art-lebedev-patnashki
       </button>
+      <button id="ideaparallels-texteditor-tab-button" onclick="tab_button_click(this)">
+        ideaparallels-texteditor
+      </button>
     </div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -116,6 +119,9 @@
         </div>
         <div class="swiper-slide" id="art-lebedev-patnashki">
           <a href="/i-love-ny">art-lebedev-patnashki</a>
+        </div>
+        <div class="swiper-slide" id="ideaparallels-texteditor">
+          <a href="/ideaparallels-texteditor">ideaparallels-texteditor</a>
         </div>
       </div>
     </div>
@@ -223,7 +229,7 @@
       //Svg buttons
       let main_info = document.getElementById('main_info_block').children
       for (let i = 0; i < main_info.length; i++) {
-        console.log(main_info[i].children[0])
+
         main_info[i].children[0].classList.remove("art_lebedes_svg")
         main_info[i].children[0].classList.add("ideaparallels_svg")
       }
@@ -240,6 +246,13 @@
         main_info[i].children[0].classList.add("art_lebedes_svg")
       }
 
+    } else if (id == "ideaparallels-texteditor") {
+      let main_info = document.getElementById('main_info_block').children
+      for (let i = 0; i < main_info.length; i++) {
+        main_info[i].children[0].classList.remove("art_lebedes_svg")
+        main_info[i].children[0].classList.add("ideaparallels_svg")
+      }
+      new_background_color.style.backgroundColor = "#816890"
     }
 
     document.getElementsByTagName("body")[0].insertBefore(new_background_color, document.getElementsByTagName("header")[0])
