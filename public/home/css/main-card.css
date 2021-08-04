@@ -52,12 +52,13 @@
     
     .tab button {
         display: inline-block;
-        font-size: 120%;
+        font-size: 110%;
         background-color: transparent;
         border: 0;
         border-radius: 20px;
         padding: 5px 10px 5px 10px;
         transition: all 0.5s;
+        margin: 5px;
     }
     
     .active_tab_button {
