@@ -163,10 +163,6 @@ app.get("/", async(req, res) => {
     let projects_data = { projects: JSON.stringify(projects) };
     res.render("home", { projects_data });
 });
-app.get("/LiveHTML", async(req, res) => {
-    let projects_data = { projects: JSON.stringify(projects) };
-    res.render("LiveHTML");
-});
 
 
 app.get("/i-love-ny", async(req, res) => {
