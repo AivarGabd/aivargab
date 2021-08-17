@@ -29,139 +29,15 @@ books_genres.forEach((genre) => {
     })
 })
 
-let projects = [{
-        id: "ideaparallels",
-        colors: books_colors,
-        nodejs: [{
-                name: "@a2seven/yoo-checkout",
-                description: "(платeжная система юкассы)",
-            },
-            {
-                name: "@azure/cosmos",
-                description: "(лучше Mongo: для работы с большими JSON и поддерживает SQL запросы)",
-            },
-            {
-                name: "async",
-                description: "",
-            },
-            {
-                name: "bcryptjs",
-                description: "",
-            },
-            {
-                name: "cookie-session",
-                description: "",
-            },
-            {
-                name: "express",
-                description: "",
-            },
-            {
-                name: "express-handlebars",
-                description: "",
-            },
-            {
-                name: "heroku-ssl-redirect",
-                description: "",
-            },
-            {
-                name: "mobile-detect",
-                description: "(Для редирект IOS или Android)",
-            },
-            {
-                name: "Nodemailer",
-                description: "(Рассылка по почте)",
-            },
-            {
-                name: "nodemailer-juice",
-                description: "(CSS в email)",
-            },
-            {
-                name: "nodemon",
-                description: "",
-            },
-            {
-                name: "uuid",
-                description: "",
-            },
-        ],
-        Frontend: [{
-                name: "d3.js",
-                description: "(Визуализация данных)",
-            },
-            {
-                name: "sweetalert2@10",
-                description: "(Диалоговые окна)",
-            },
-            {
-                name: "Clipboard",
-                description: "(Запись в буфер обмена)",
-            },
-            {
-                name: "Swiperjs",
-                description: "(Slider)",
-            },
-            {
-                name: "GSAP ScrollTrigger",
-                description: "(Parallax для мобильных устройств)",
-            },
-        ],
-        UX: [
-            "Чтобы сократить время на поиск необходимого элемента на главном экране – каждой категории присвоен свой уникальный цвет.",
-            "Чтобы пользователь быстрее обрел привычку ориентироваться на цвета: 1)Цвета должны отличаться высокой контрастностью от друг друга. 2)Цвета должны плавно манятся.",
-            "Сайт получился весьма сложным в использовании, поэтому цель была – поймать «топорный стиль» facebook, Instagram и других самых популярных сайтов.",
-        ],
-    },
-    {
-        id: "art-lebedev-patnashki",
-        colors: ["whitesmoke", "#dddddd"],
-        nodejs: [{
-                name: "express",
-                description: "",
-            },
-            {
-                name: "express-handlebars",
-                description: "",
-            },
-            {
-                name: "heroku-ssl-redirect",
-                description: "",
-            },
-            {
-                name: "nodemon",
-                description: "",
-            },
-        ],
-        Frontend: [{
-                name: "normalize.min.css",
-                description: "",
-            },
-            {
-                name: "asscroll x GSAP ScrollTrigger",
-                description: "(Smooth parallax)",
-            },
-            {
-                name: "jquery",
-                description: "(Получение валюты с биржи)",
-            },
-        ],
-        UX: [
-            "Переверстать страницу – презентацию",
-            "<a href='https://www.artlebedev.ru/i-love-ny/'>Пятнашки «Я люблю Нью-Йорк»</a>",
-        ],
-    },
-    {
-        id: "ideaparallels-texteditor",
-        colors: ["#816890"],
-        nodejs: [],
-        Frontend: [],
-        UX: []
-    }
-];
+
+
+books_colors = JSON.stringify(books_colors)
+
+
 
 app.get("/", async(req, res) => {
-    let projects_data = { projects: JSON.stringify(projects) };
-    res.render("home", { projects_data });
+
+    res.render("home", { books_colors });
 });
 
 

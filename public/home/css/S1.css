@@ -1,0 +1,129 @@
+.S1 {
+    height: 75vh;
+    font-size: 120%;
+}
+
+@media (min-width: 56.25em) {
+    .S1 {
+        display: flex;
+    }
+}
+
+.main-content {
+    flex: 1;
+}
+
+.sidebar {
+    flex: 0 0 50%;
+    margin-left: 0px;
+}
+
+.sidebar-content {
+    margin-left: 50px;
+}
+
+.about_block span {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.main_modules_block {
+    margin-top: 10px;
+}
+
+.main_modules_block div {
+    font-size: 120%;
+}
+
+.main_modules_block span {
+    display: block;
+    margin-top: 20px;
+}
+
+.ideaparallels_href_rect {
+    width: 600px;
+    height: 300px;
+    background-color: whitesmoke;
+    color: white;
+    font-size: 200%;
+    border-radius: 30px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+}
+
+.ideaparallels_href_rect:hover {
+    border-radius: 0%;
+    color: #6c6cff;
+}
+
+.ui_block {
+    margin-top: 10px;
+}
+
+.ux_block {
+    margin-top: 20px;
+}
+
+.ui_block div,
+.ux_block div {
+    padding-bottom: 10px;
+    font-size: 170%;
+}
+
+.ui_block span,
+.ux_block span {
+    display: block;
+    margin-top: 10px;
+}
+
+.line1,
+.line2,
+.line3 {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.line1 {
+    margin-top: 10px;
+    width: 0px;
+    height: 2px;
+    transition: width 0.5s ease;
+}
+
+.line2 {
+    margin-left: 20px;
+    padding: 0;
+    position: absolute;
+    width: 2px;
+    height: 75vh;
+    -webkit-animation: expand 1s;
+}
+
+@-webkit-keyframes expand {
+    0% {
+        height: 0px
+    }
+    100% {
+        height: 75vh
+    }
+}
+
+.line3 {
+    margin-top: 10px;
+    width: 0px;
+    height: 2px;
+    transition: width 0.5s ease;
+}
