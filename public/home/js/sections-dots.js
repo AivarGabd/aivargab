@@ -25,6 +25,7 @@ function changeDot() {
             e.classList.remove("active");
         });
         r.style.setProperty("--active-color", ideaparallels_rect.style.backgroundColor);
+        console.log(document.querySelector(".M1"))
         document.querySelector(".M1").classList.add("active");
     } else if (scrollValue < heightS3) {
         document.querySelectorAll("nav li:not(.M2)").forEach(function(e) {
