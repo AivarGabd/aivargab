@@ -78,7 +78,9 @@ function changeDot() {
 }
 
 window.onload = () => {
+    indicator.style.opacity = '1'
     changeDot();
+
 };
 
 

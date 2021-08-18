@@ -71,6 +71,7 @@ nav li {
 }
 
 .indicator {
+    opacity: 0;
     position: absolute;
     background-color: var(--active-color);
 }
