@@ -1,5 +1,18 @@
 .S1 {
+    height: 75vh;
     font-size: 120%;
+}
+
+@media (max-width: 1610px) {
+    .main-content {
+        font-size: 90%;
+    }
+    .about_block span {
+        padding-bottom: 15px !important;
+    }
+    .main_modules_block span {
+        margin-top: 10px !important;
+    }
 }
 
 @media (min-width: 56.25em) {
