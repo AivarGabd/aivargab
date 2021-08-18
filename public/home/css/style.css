@@ -72,10 +72,7 @@ nav li {
 
 .indicator {
     position: absolute;
-    z-index: -1;
-    background-color: gray;
-    width: 15px;
-    height: 15px;
+    background-color: var(--active-color);
 }
 
 .m3 {
@@ -83,8 +80,8 @@ nav li {
     height: 40px;
 }
 
-.active {
-    background-color: var(--active-color);
+.m3 svg {
+    z-index: 1;
 }
 
 .links_block {

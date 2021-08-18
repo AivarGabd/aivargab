@@ -1,6 +1,7 @@
 window.addEventListener("scroll", changeDot, false);
 let r = document.querySelector(":root");
 let ideaparallels_rect = document.querySelector(".ideaparallels_href_rect");
+let indicator = document.querySelector(".indicator");
 
 
 let offset = 0,
@@ -23,7 +24,7 @@ x = {
 x.registerListener(function(val) {
     //alert("Someone changed the value of x.a to " + val);
     ideaparallels_rect.style.backgroundColor = val
-    if (document.querySelector(".M1").classList[1]) r.style.setProperty("--active-color", val);
+    if ((window.scrollY < document.querySelector(".S2").offsetTop)) r.style.setProperty("--active-color", val);
 });
 
 ideaparallels_rect.style.backgroundColor = ideaparallels_colors[Math.floor(Math.random() * ideaparallels_colors.length)];
@@ -36,14 +37,10 @@ for (let i = 0; i < 100; i++) {
 
 
 function changeDot() {
-
     const heightS2 = document.querySelector(".S2").offsetTop,
         heightS3 = document.querySelector(".S3").offsetTop;
 
-    let indicator = document.querySelector(".indicator");
-
     let scrollValue = window.scrollY;
-
     if (scrollValue < heightS2) {
         document.querySelectorAll("nav li:not(.M1)").forEach(function(e) {
             e.classList.remove("active");
@@ -51,7 +48,9 @@ function changeDot() {
 
         indicator.style.top = document.querySelector(".M1").offsetTop + "px"
         r.style.setProperty("--active-color", ideaparallels_rect.style.backgroundColor);
-        document.querySelector(".M1").classList.add("active");
+        indicator.style.width = document.querySelector(".M1").offsetWidth + "px"
+        indicator.style.height = document.querySelector(".M1").offsetHeight + "px"
+
 
     } else if (scrollValue < heightS3) {
         document.querySelectorAll("nav li:not(.M2)").forEach(function(e) {
@@ -60,7 +59,9 @@ function changeDot() {
 
         r.style.setProperty("--active-color", "#fc3c17");
         indicator.style.top = document.querySelector(".M2").offsetTop + "px"
-        document.querySelector(".M2").classList.add("active");
+            //document.querySelector(".M2").classList.add("active");
+        indicator.style.width = document.querySelector(".M2").offsetWidth + "px"
+        indicator.style.height = document.querySelector(".M2").offsetHeight + "px"
 
     } else {
         document.querySelectorAll("nav li:not(.M3)").forEach(function(e) {
@@ -69,7 +70,9 @@ function changeDot() {
 
         r.style.setProperty("--active-color", "gray");
         indicator.style.top = document.querySelector(".M3").offsetTop + "px"
-        document.querySelector(".M3").classList.add("active");
+            //document.querySelector(".M3").classList.add("active");
+        indicator.style.width = document.querySelector(".M3").offsetWidth + "px"
+        indicator.style.height = document.querySelector(".M3").offsetHeight + "px"
 
     }
 }
@@ -77,3 +80,15 @@ function changeDot() {
 window.onload = () => {
     changeDot();
 };
+
+
+
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
