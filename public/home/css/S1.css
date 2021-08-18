@@ -43,7 +43,7 @@
     width: 600px;
     height: 300px;
     background-color: whitesmoke;
-    color: #6c6cff;
+    color: white;
     font-size: 200%;
     border-radius: 30px;
     /* Center slide text vertically */
@@ -65,7 +65,7 @@
 
 .ideaparallels_href_rect:hover {
     border-radius: 0%;
-    color: navy;
+    color: #6c6cff;
 }
 
 .ui_block {

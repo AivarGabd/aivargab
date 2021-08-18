@@ -1,22 +1,46 @@
 window.addEventListener("scroll", changeDot, false);
 let r = document.querySelector(":root");
-
 let ideaparallels_rect = document.querySelector(".ideaparallels_href_rect");
-let offset = 0,
-    timeout_milisec = 1000;
 
+
+let offset = 0,
+    timeout_milisec = 2000;
+//Varbale with listener
+x = {
+    aInternal: 10,
+    aListener: function(val) {},
+    set a(val) {
+        this.aInternal = val;
+        this.aListener(val);
+    },
+    get a() {
+        return this.aInternal;
+    },
+    registerListener: function(listener) {
+        this.aListener = listener;
+    }
+}
+x.registerListener(function(val) {
+    //alert("Someone changed the value of x.a to " + val);
+    ideaparallels_rect.style.backgroundColor = val
+    if (document.querySelector(".M1").classList[1]) r.style.setProperty("--active-color", val);
+});
+
+ideaparallels_rect.style.backgroundColor = ideaparallels_colors[Math.floor(Math.random() * ideaparallels_colors.length)];
 for (let i = 0; i < 100; i++) {
     setTimeout(function() {
-        ideaparallels_rect.style.backgroundColor = ideaparallels_colors[Math.floor(Math.random() * ideaparallels_colors.length)];
-        r.style.setProperty("--active-color", ideaparallels_rect.style.backgroundColor);
+        x.a = ideaparallels_colors[Math.floor(Math.random() * ideaparallels_colors.length)];
     }, timeout_milisec + offset);
     offset += timeout_milisec;
 }
-changeDot()
+
 
 function changeDot() {
+
     const heightS2 = document.querySelector(".S2").offsetTop,
         heightS3 = document.querySelector(".S3").offsetTop;
+
+    let indicator = document.querySelector(".indicator");
 
     let scrollValue = window.scrollY;
 
@@ -24,21 +48,29 @@ function changeDot() {
         document.querySelectorAll("nav li:not(.M1)").forEach(function(e) {
             e.classList.remove("active");
         });
+
+        indicator.style.top = document.querySelector(".M1").offsetTop + "px"
         r.style.setProperty("--active-color", ideaparallels_rect.style.backgroundColor);
-        console.log(document.querySelector(".M1"))
         document.querySelector(".M1").classList.add("active");
+
     } else if (scrollValue < heightS3) {
         document.querySelectorAll("nav li:not(.M2)").forEach(function(e) {
             e.classList.remove("active");
         });
+
         r.style.setProperty("--active-color", "#fc3c17");
+        indicator.style.top = document.querySelector(".M2").offsetTop + "px"
         document.querySelector(".M2").classList.add("active");
+
     } else {
         document.querySelectorAll("nav li:not(.M3)").forEach(function(e) {
             e.classList.remove("active");
         });
+
         r.style.setProperty("--active-color", "gray");
+        indicator.style.top = document.querySelector(".M3").offsetTop + "px"
         document.querySelector(".M3").classList.add("active");
+
     }
 }
 

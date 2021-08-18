@@ -35,7 +35,7 @@ nav {
     position: fixed;
     top: 30%;
     bottom: 30%;
-    right: 50;
+    right: 100;
     width: 60px;
     background-color: transparent;
     height: 150px;
@@ -72,10 +72,13 @@ nav li {
 
 .indicator {
     position: absolute;
-    background-color: black;
+    z-index: -1;
+    background-color: gray;
+    width: 15px;
+    height: 15px;
 }
 
-.M3 {
+.m3 {
     width: 40px;
     height: 40px;
 }
