@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200&family=Philosopher:ital,wght@0,700;1,700&display=swap');
+
+.MenuItem:active {
+  background: #443d7f;
+}

@@ -45,6 +45,11 @@ app.get("/i-love-ny", async(req, res) => {
     res.render("i-love-ny");
 });
 
+app.get("/tomato", async(req, res) => {
+    res.render("tomato");
+});
+
+
 app.get("/i-love-ny-process", async(req, res) => {
     res.render("i-love-ny-process");
 });
